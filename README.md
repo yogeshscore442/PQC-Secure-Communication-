@@ -1,211 +1,608 @@
-# 🛡️ QUANT: Post-Quantum Cryptography (PQC) Secure Communication Platform
+# 🛡️ PQC Secure Communication - Post-Quantum Cryptography Platform
 
 <div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12%20%7C%203.13-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-3.0%2B-000000?style=for-the-badge&logo=flask&logoColor=white)
-![NIST PQC](https://img.shields.io/badge/NIST%20PQC-FIPS%20203%20%2F%20204%20%2F%20205-00C853?style=for-the-badge)
-![liboqs](https://img.shields.io/badge/liboqs-Bundled%20C%20Binaries%20(x64)-00E5FF?style=for-the-badge)
-![Security](https://img.shields.io/badge/Security-Quantum--Proof%20End--to--End-FF3D00?style=for-the-badge)
+![NIST PQC](https://img.shields.io/badge/NIST%20PQC-FIPS%20203%2F204%2F205-00C853?style=for-the-badge)
+![Security](https://img.shields.io/badge/Security-Quantum--Resistant-FF3D00?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 <p align="center">
-  <b>A real-world, future-proof communication system designed to protect chats, emails, and files against both classical hackers and future Quantum Supercomputers.</b>
+  <b>A complete post-quantum cryptography platform for secure communication using NIST-approved quantum-resistant algorithms.</b>
 </p>
 
-[Quick Story](#-1-minute-story-what-is-this-project-and-why-do-we-need-it) • [Classical vs Quantum](#-the-problem-why-today's-encryption-will-fail) • [How It Works](#-how-the-encryption-works-step-by-step) • [Why It Cannot Be Hacked](#-why-hackers-cannot-break-this-system) • [How to Run It](#-how-to-run-this-project-in-1-minute)
+**Secure Chat • Encrypted Email • Protected File Vault • Quantum Signatures • PQC Key Exchange**
 
 </div>
 
 ---
 
-## 📖 1-Minute Story: What is This Project and Why Do We Need It?
-
-Imagine you send a private message like *"My Secret Password"* to your friend. 
-
-* **Today (Normal Internet):** Websites use **RSA or ECC encryption** (like locking your message inside a metal padlock). Normal computers today cannot pick that lock.
-* **The Looming Danger (Quantum Computers):** Scientists are building **Quantum Computers**. Using a math formula called **Shor's Algorithm**, a Quantum Computer can snap that metal padlock open in just **a few seconds**!
-* **The "Harvest Now, Decrypt Later" Threat:** Hackers and spy agencies are already **recording and storing your encrypted internet traffic today**. They can't read it now, but once they get a Quantum Computer in a few years, they will unlock and read all your saved private messages!
-
-> 💡 **What this project does:**  
-> **QUANT** replaces the old, breakable padlocks with **brand-new Post-Quantum Mathematical Locks (NIST Standards)**. Even the most powerful Quantum Computer in the world cannot break these locks!
-
----
-
-## ⚔️ The Problem: Why Today's Encryption Will Fail
-
-| Encryption Type | 🔴 Today's Standard (RSA / ECC) | 🟢 Our System: Post-Quantum (QUANT) |
-| :--- | :--- | :--- |
-| **How It Locks Data** | Simple prime numbers & math curves | **768-Dimensional Lattice Math (LWE)** *(A multi-dimensional maze with intentional random noise)* |
-| **Can Quantum PCs Break It?** | ❌ **YES!** (Easily cracked by Shor's Algorithm) | ✅ **NO!** (Mathematically impossible for quantum PCs) |
-| **Protected Against Future Theft?** | ❌ **NO** (Hackers can decrypt it in the future) | ✅ **YES** (Safe forever — even 50 years from now) |
-| **Official Government Standard** | Becoming Obsolete by 2030 | **Official NIST Standards (FIPS 203, 204, 205)** |
-| **Security Layer** | Single classic lock | **Hybrid Dual-Lock (X25519 + ML-KEM-768)** |
+## 📚 Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Why Post-Quantum Cryptography](#why-post-quantum-cryptography)
+- [Architecture & Algorithms](#architecture--algorithms)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Security Features](#security-features)
+- [Testing](#testing)
+- [Project Structure](#project-structure)
+- [Technical Stack](#technical-stack)
+- [Contributing](#contributing)
+- [License](#license)
 
 ---
 
-## 🧮 What Quantum Algorithms Are We Using?
+## Overview
 
-We don't use fake simulations; our project runs **100% genuine Post-Quantum Algorithms** via the official **Open Quantum Safe (`liboqs`)** C-engine:
+**PQC Secure Communication** is a modern web-based platform that implements **Post-Quantum Cryptography (PQC)** standards approved by NIST (National Institute of Standards and Technology). 
 
+### What This Project Does:
+- ✅ Provides quantum-resistant encryption for real-time communications
+- ✅ Uses NIST-standardized PQC algorithms (FIPS 203, 204, 205)
+- ✅ Protects against both classical and future quantum computing threats
+- ✅ Offers practical tools for secure messaging, email, and file storage
+- ✅ Includes live attack simulation and security visualization
+
+### The Problem We Solve:
+Today's encryption (RSA, ECC) will be broken by quantum computers. Hackers are already collecting encrypted data to decrypt later ("harvest now, decrypt later" attacks). This project provides **future-proof encryption** that remains secure even against quantum computers.
+
+---
+
+## Features
+
+### 💬 **Real-Time Quantum Chat**
+- End-to-end encrypted messaging with post-quantum key exchange
+- Support for individual and group conversations
+- Online/offline user status tracking
+- Message delivery confirmation
+
+### 📧 **Quantum-Encrypted Email**
+- PQC-secured email with digital signatures
+- File attachment encryption
+- Sender authentication via ML-DSA quantum signatures
+- Quantum-safe key exchange for async communication
+
+### 📁 **Secure File Vault**
+- AES-256-GCM file encryption
+- SHA3-384 integrity verification
+- Encrypted storage with secure download
+- Support for large file uploads
+
+### 🔬 **Live Cyber Attack Simulation**
+- Real-time tampering attack demo
+- Replay attack testing
+- Man-in-the-Middle (MITM) defense showcase
+- Authentication failure visualization
+
+### 🔐 **Quantum Signatures & Handshakes**
+- ML-DSA-65 (Dilithium) digital signatures
+- ML-KEM-768 hybrid key encapsulation
+- X25519 elliptic curve key exchange
+- Perfect Forward Secrecy (PFS) support
+
+### 📊 **Performance Monitoring**
+- Real-time cryptographic operation benchmarks
+- KeyGen, Encrypt, Decrypt, Sign performance metrics
+- Classical vs Quantum algorithm comparison
+- Latency and throughput analysis
+
+---
+
+## Why Post-Quantum Cryptography?
+
+| Aspect | Classical (RSA/ECC) | Post-Quantum (Our System) |
+|--------|-------------------|------------------------|
+| **Quantum Threat** | ❌ Broken by quantum computers | ✅ Mathematically resistant |
+| **Standards** | Becoming obsolete (NIST, 2030) | ✅ NIST FIPS 203/204/205 approved |
+| **Security Level** | Single-layer protection | ✅ Hybrid dual-layer (X25519 + ML-KEM) |
+| **Future Proof** | No | ✅ Yes (safe for 50+ years) |
+| **Harvest Now, Decrypt Later Safe** | No | ✅ Yes |
+
+### Timeline of Threat:
+- **2024-2030:** Quantum computers still developing
+- **2030+:** Large-scale quantum computers emerge
+- **Future:** All current RSA/ECC encrypted data is vulnerable
+- **Our Solution:** Protected today, tomorrow, and beyond
+
+---
+
+## Architecture & Algorithms
+
+### 🔑 Key Exchange (ML-KEM-768 + X25519 Hybrid)
 ```
-┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                                   QUANT ENCRYPTION SUITE                               │
-├───────────────────────────────┬───────────────────────────────┬────────────────────────┤
-│ 1. Key Exchange (Lock Maker)  │ 2. Digital Signature (Seal)   │ 3. Data Protection     │
-├───────────────────────────────┼───────────────────────────────┼────────────────────────┤
-│ • ML-KEM-768 (Kyber)          │ • ML-DSA-65 (Dilithium)       │ • AES-256-GCM          │
-│   Creates the shared secret   │   Proves sender identity;     │   Encrypts message     │
-│   between 2 users safely      │   prevents fake impersonation │   with 16-byte Auth Tag│
-│ • Hybrid (X25519 + ML-KEM)    │ • SLH-DSA (SPHINCS+)          │ • ChaCha20-Poly1305    │
-│   Double-layer protection     │   Stateless hash backup       │ • HKDF-SHA-384         │
-└───────────────────────────────┴───────────────────────────────┴────────────────────────┘
+Purpose: Establish a shared secret key between two users
+Hybrid Approach:
+  ├─ X25519: Classical elliptic curve (fast, efficient)
+  └─ ML-KEM-768: Post-quantum lattice (quantum-resistant)
+Result: Two independent keys are combined (XOR) for maximum security
+```
+
+### 🔐 Encryption (AES-256-GCM + ChaCha20-Poly1305)
+```
+Purpose: Encrypt the actual message data
+AES-256-GCM:
+  ├─ 256-bit key strength
+  ├─ Galois/Counter Mode for authentication
+  └─ 16-byte authentication tag
+ChaCha20-Poly1305:
+  ├─ Stream cipher alternative
+  └─ Built-in Poly1305 MAC
+```
+
+### ✍️ Digital Signatures (ML-DSA-65 + SLH-DSA)
+```
+Purpose: Prove sender identity and prevent impersonation
+ML-DSA-65 (Dilithium):
+  ├─ Module-lattice based
+  ├─ ~2.4KB signature size
+  └─ NIST FIPS 204 approved
+SLH-DSA (SPHINCS+):
+  ├─ Stateless hash-based backup
+  └─ Emergency authentication
+```
+
+### 🔄 Key Derivation (HKDF-SHA-384)
+```
+Purpose: Derive cryptographic keys from shared secrets
+- Extract: Condense random input
+- Expand: Generate required key material
+- Salt: Prevents rainbow table attacks
+- Info: Context-dependent key separation
+```
+
+### Algorithm Stack Summary:
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                     CRYPTOGRAPHIC SUITE                         │
+├──────────────────┬──────────────────┬──────────────────────────┤
+│ Key Exchange     │ Signatures       │ Encryption               │
+├──────────────────┼──────────────────┼──────────────────────────┤
+│ • ML-KEM-768     │ • ML-DSA-65      │ • AES-256-GCM            │
+│ • X25519         │ • SLH-DSA        │ • ChaCha20-Poly1305      │
+│ • HKDF-SHA-384   │ • SHA3-384       │ • HMAC-SHA-384           │
+│ • SHA3-384       │                  │ • NONCE generation       │
+└──────────────────┴──────────────────┴──────────────────────────┘
 ```
 
 ---
 
-## 🔄 How the Encryption Works: Step-by-Step
+## Installation
 
-Here is the exact journey of a message sent from **Alice** to **Bob**:
+### System Requirements:
+- **OS:** Windows 10/11, Linux, or macOS
+- **Python:** 3.10, 3.11, 3.12, or 3.13
+- **RAM:** Minimum 2GB (4GB+ recommended)
+- **Disk Space:** 500MB for dependencies
 
-```
-[ Alice: "Hello Bob" ]
-        │
-        ▼ 1. HANDSHAKE (Creating the Secret Key)
-  Alice & Bob exchange public keys using ML-KEM-768 + X25519.
-  Both compute the EXACT SAME 256-bit Secret Key without sending the key over the internet!
-        │
-        ▼ 2. ENCRYPTION (Locking the Message)
-  The message is encrypted using AES-256-GCM.
-  Result: A scrambled ciphertext + a unique 16-byte Authentication Tag.
-        │
-        ▼ 3. QUANTUM SIGNATURE (Sealing the Package)
-  Alice stamps the encrypted package with her ML-DSA-65 Private Key.
-  This is Alice's unforgeable digital signature.
-        │
-        ▼ 4. NETWORK TRANSMISSION (Through the Internet / Server)
-  The packet travels across the network.
-  If a Hacker intercepts it, all they see is random garbage: [ "7xK9...a8f", Tag: "...", Sig: "..." ]
-        │
-        ▼ 5. VERIFICATION & DECRYPTION (Bob reads the message)
-  1. Bob checks Alice's Quantum Signature ──► ✅ Confirmed: It is really from Alice!
-  2. Bob checks the 16-byte Auth Tag ───────► ✅ Confirmed: Nobody changed any data!
-  3. Bob decrypts with the Secret Key ─────► 💬 "Hello Bob"
-```
-
----
-
-## 🛡️ Why Hackers CANNOT Break This System
-
-```
-                      ┌─────────────────────────────────────────┐
-                      │          🚨 HACKER ATTACK TESTS         │
-                      └────────────────────┬────────────────────┘
-                                           │
-         ┌─────────────────────────────────┼─────────────────────────────────┐
-         ▼                                 ▼                                 ▼
-┌──────────────────┐             ┌──────────────────┐              ┌──────────────────┐
-│ 1. Quantum PC    │             │ 2. Data Tamper   │              │ 3. Replay Attack │
-│    Brute Force   │             │    Bit-Flip      │              │    Old Message   │
-├──────────────────┤             ├──────────────────┤              ├──────────────────┤
-│ ❌ BLOCKED!      │             │ ❌ BLOCKED!      │              │ ❌ BLOCKED!      │
-│ Lattice math     │             │ AES-GCM Tag      │              │ Monotonic        │
-│ requires 2^190   │             │ mismatch throws  │              │ Sequence check   │
-│ quantum steps    │             │ instant Alert    │              │ rejects packet   │
-└──────────────────┘             └──────────────────┘              └──────────────────┘
-```
-
-### 1. Quantum Computers Cannot Solve Lattice Math
-Traditional RSA is based on factoring large numbers (which Quantum computers do easily). Our project uses **Lattice-Based Math (Module Learning with Errors)**. It is like finding a specific point in an invisible 768-dimensional grid filled with random mathematical fog — even a Quantum Computer would take billions of years to guess it.
-
-### 2. Zero-Tolerance for Tampering (AEAD Auth Tag)
-If a hacker intercepts the packet and changes even **one single letter or digit**, the 16-byte Authentication Tag will fail, and Bob's computer will **instantly drop the message and trigger a Tamper Alert**.
-
-### 3. Replay Protection (Sequence Numbers)
-If a hacker records a valid message like *"Send $100"* and tries to send it again later, the system detects that **Sequence Number #1 was already used** and blocks the duplicate immediately.
-
-### 4. Man-in-the-Middle (MITM) Immunity
-Every message has a Quantum Signature (**ML-DSA-65**). A hacker cannot pose as your friend because they don't have your friend's private key to sign the message.
-
-### 5. Perfect Forward Secrecy (PFS)
-A new secret key is created for every single chat session. Even if someone steals a device 5 years from now, **they still cannot decrypt past conversations**.
-
----
-
-## 🚀 Key Features in This Platform
-
-* 💬 **Real-Time Quantum Chat:** Live end-to-end encrypted messaging with online/offline user status.
-* 📬 **Quantum Encrypted Email:** Asymmetric quantum-encrypted email with secure attachments.
-* 📁 **Secure File Vault:** Client-side file encryption with SHA3-384 integrity checks.
-* 🔬 **Live Cyber Attack Simulator:** Test live Payload Tampering, Replay Attacks, and MITM attacks on screen to see how the system blocks them in real-time.
-* 📊 **Live Performance Benchmarks:** Real microsecond speed tests for KeyGen, Encrypt, Decrypt, and Sign across Classical vs Quantum algorithms.
-
----
-
-## 💻 How to Run This Project in 1 Minute
-
-### 📋 What you need:
-* Windows 10/11 (or Linux/macOS)
-* **Python** (version 3.10 to 3.13) installed with **"Add Python to PATH"** checked.
-
----
-
-### ⚡ Step 1: Download the Project
+### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/mxcro-exe/quant.git
-cd quant
+git clone https://github.com/yogeshscore442/PQC-Secure-Communication-.git
+cd PQC-Secure-Communication-
 ```
-*(Or click the green **Code ➔ Download ZIP** button and extract it).*
 
-### ⚡ Step 2: Install Requirements (1-Click)
-Double-click:
-```
-INSTALL_DEPENDENCIES.bat
-```
-*(This automatically checks Python and installs all required libraries).*
+### Step 2: Install Dependencies
 
-### ⚡ Step 3: Start the Server (1-Click)
-Double-click:
+#### Windows (Automatic):
+Double-click `INSTALL_DEPENDENCIES.bat`
+
+#### Windows (Manual):
+```bash
+python -m pip install --upgrade pip
+pip install -r requirements.txt
 ```
-START_SERVER.bat
+
+#### Linux/macOS:
+```bash
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
 ```
-Now open your browser and go to:
-👉 **`http://localhost:5000`**
+
+### Step 3: Verify Installation
+```bash
+python -c "from app import create_app; print('✅ Installation successful!')"
+```
 
 ---
 
-### 📱 Connect from your Mobile Phone / Other Laptop
-When you start the server, it shows your local Wi-Fi IP address:
+## Usage
+
+### Start the Application
+
+#### Windows (Automatic):
+Double-click `START_SERVER.bat`
+
+#### Windows/Linux/macOS (Manual):
+```bash
+python run.py
 ```
-[+] Local Access:  http://localhost:5000
-[+] LAN/Wi-Fi IP:  http://192.168.1.15:5000 (Connect Phones & Other Laptops)
+
+The server will start on `http://localhost:5000`
+
+### Access from Different Devices:
+When the server starts, it displays:
 ```
-Open that IP address in your mobile browser to chat between two different devices securely!
+🚀 Local Access:    http://localhost:5000
+📱 Wi-Fi/LAN IP:    http://192.168.1.X:5000
+```
+
+Open the LAN IP on another device (phone, tablet, laptop) to test secure communication between devices.
+
+### Core Modules:
+
+1. **Chat Module** (`app/chat/`)
+   - Real-time WebSocket communication
+   - Quantum-safe key exchange
+   - Message encryption and verification
+
+2. **Auth Module** (`app/auth/`)
+   - User registration and login
+   - Secure session management
+   - Password hashing (Argon2)
+
+3. **Crypto Module** (`app/crypto/`)
+   - ML-KEM key encapsulation
+   - ML-DSA signature generation/verification
+   - AES-256-GCM encryption
+   - Hybrid key derivation
+
+4. **Email Module** (`app/mail/`)
+   - Quantum-encrypted email
+   - Async encryption/decryption
+   - Secure attachments
+
+5. **File Module** (`app/files/`)
+   - Encrypted file upload/download
+   - SHA3-384 integrity verification
+   - Streaming cipher support
+
+6. **API Module** (`app/api/`)
+   - RESTful endpoints
+   - JSON request/response handling
+   - Error handling and logging
 
 ---
 
-## 🧪 Testing the Security Attacks Yourself
+## Security Features
 
-1. Open 2 browser windows (one as **Alice**, one as **Bob**).
-2. Start a chat and click **Execute Handshake** to establish a quantum-safe channel.
-3. **Test Tamper Defense:** Check the **"Simulate Payload Tampering"** box and click Send ➔ The system catches the flipped bits and shows an **Authentication Alert**!
-4. **Test Replay Defense:** Check the **"Simulate Replay Attack"** box and click Send ➔ The system detects the duplicate sequence number and **drops the packet**!
+### 🛡️ Defense Mechanisms:
+
+1. **Quantum-Resistant Encryption**
+   - Lattice-based mathematics (ML-KEM-768)
+   - Resistant to Shor's algorithm
+   - NIST-approved standards
+
+2. **Authentication Tag (AES-GCM)**
+   - 16-byte tag detects tampering
+   - Fails on any bit modification
+   - Automatic packet rejection
+
+3. **Replay Attack Prevention**
+   - Monotonic sequence numbers
+   - Timestamp verification
+   - Session nonce binding
+
+4. **Man-in-the-Middle (MITM) Protection**
+   - ML-DSA digital signatures
+   - Sender authentication
+   - Unforgeable signatures
+
+5. **Perfect Forward Secrecy (PFS)**
+   - Unique key per session
+   - Past sessions unaffected by key leakage
+   - Ephemeral key exchange
+
+6. **Key Derivation Security**
+   - HKDF-SHA-384 with salt
+   - Context-dependent expansion
+   - 256-bit entropy guarantee
 
 ---
 
-## 📜 Standards & Compliance
+## Testing
 
-This project strictly adheres to the official standards published by the **National Institute of Standards and Technology (NIST)**:
-* **FIPS 203:** ML-KEM (Module-Lattice Key Encapsulation)
-* **FIPS 204:** ML-DSA (Module-Lattice Digital Signatures)
-* **FIPS 205:** SLH-DSA (Stateless Hash-Based Signatures)
-* **RFC 5869:** HKDF Key Derivation Standard
+### Run Automated Tests:
+```bash
+# Run all tests
+pytest tests/
+
+# Run specific test module
+pytest tests/test_crypto.py -v
+
+# Run with coverage
+pytest --cov=app tests/
+```
+
+### Available Tests:
+
+| Test File | Purpose |
+|-----------|---------|
+| `test_crypto.py` | Cryptographic function validation |
+| `test_chat_advanced_features.py` | Chat encryption and signatures |
+| `test_integration.py` | End-to-end communication flows |
+| `test_real_crypto_attacks.py` | Attack simulation and defense |
+| `test_group_and_delete.py` | Group chat and cleanup |
+
+### Manual Security Testing:
+
+1. **Handshake Test:**
+   - Open browser DevTools (F12)
+   - Execute Handshake between two users
+   - Verify shared secret key in console logs
+
+2. **Tamper Detection:**
+   - Check "Simulate Tampering" before sending
+   - Message should fail authentication
+   - Console shows "Authentication Tag Mismatch"
+
+3. **Replay Protection:**
+   - Check "Simulate Replay Attack"
+   - System rejects duplicate sequence numbers
+   - Logs show "Replay Attack Detected"
+
+4. **Signature Verification:**
+   - Test with invalid signature
+   - System rejects unsigned messages
+   - Verification failure is logged
+
+---
+
+## Project Structure
+
+```
+PQC-Secure-Communication-/
+├── app/                           # Main Flask application
+│   ├── __init__.py               # App factory
+│   ├── config.py                 # Configuration settings
+│   ├── models.py                 # Database models
+│   ├── auth/                     # Authentication module
+│   │   ├── routes.py            # Login, register, logout
+│   │   └── __init__.py
+│   ├── chat/                     # Real-time chat module
+│   │   ├── events.py            # WebSocket event handlers
+│   │   └── __init__.py
+│   ├── crypto/                   # Cryptography implementations
+│   │   ├── classical.py         # Classical crypto functions
+│   │   ├── pqc.py               # Post-quantum functions
+│   │   ├── hybrid.py            # Hybrid key exchange
+│   │   ├── symmetric.py         # AES-256-GCM, ChaCha20
+│   │   ├── key_derivation.py    # HKDF, salt generation
+│   │   └── x25519_curve.py      # X25519 elliptic curve
+│   ├── mail/                     # Email encryption module
+│   │   └── mail_routes.py
+│   ├── files/                    # File vault module
+│   │   └── file_routes.py
+│   ├── keys/                     # Key management
+│   │   └── key_routes.py
+│   ├── api/                      # REST API endpoints
+│   │   └── routes.py
+│   ├── audit/                    # Audit logging
+│   │   └── audit_routes.py
+│   ├── static/                   # Frontend assets
+│   │   ├── css/
+│   │   │   ├── style.css
+│   │   │   └── quantum_flow.css
+│   │   └── js/
+│   │       ├── app.js           # Core functionality
+│   │       └── quantum_flow.js  # UI animations
+│   └── templates/                # HTML templates
+│       └── index.html            # Main interface
+├── tests/                         # Test suite
+│   ├── test_crypto.py
+│   ├── test_chat_advanced_features.py
+│   ├── test_integration.py
+│   ├── test_real_crypto_attacks.py
+│   └── test_group_and_delete.py
+├── instance/                      # Runtime data
+│   ├── uploads/                  # Encrypted uploads
+│   └── temp_downloads/           # Temporary files
+├── requirements.txt              # Python dependencies
+├── run.py                        # Application entry point
+├── README.md                     # This file
+└── DEEP_ARCHITECTURE_ANALYSIS.md # Detailed architecture doc
+```
+
+---
+
+## Technical Stack
+
+### Backend:
+- **Framework:** Flask 3.0+
+- **Python Version:** 3.10 - 3.13
+- **Cryptography Library:** liboqs (Open Quantum Safe)
+- **Encryption:** cryptography, PyCryptodome
+- **Database:** SQLite with SQLAlchemy ORM
+- **Session Management:** Flask-Session
+- **Real-Time Communication:** Flask-SocketIO, python-socketio
+
+### Frontend:
+- **Markup:** HTML5
+- **Styling:** CSS3 with custom animations
+- **Scripting:** Vanilla JavaScript (ES6+)
+- **Real-Time:** Socket.IO client library
+- **UI Patterns:** Single Page Application (SPA)
+
+### Security Libraries:
+- **liboqs-python:** NIST PQC algorithms
+- **cryptography:** HKDF, SHA-3, HMAC
+- **Argon2:** Password hashing
+- **secrets:** Cryptographically secure random generation
+
+### Development Tools:
+- **Testing:** pytest, pytest-cov
+- **Linting:** flake8 (optional)
+- **Version Control:** Git
+
+---
+
+## How It Works: Message Flow
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    SECURE MESSAGE EXCHANGE                       │
+├─────────────────────────────────────────────────────────────────┤
+
+1. HANDSHAKE (Establish Shared Secret)
+   ┌──────────────────────────────────────────────────────────┐
+   │ Alice                              │                Bob   │
+   │ │                                  │                │     │
+   │ ├─ Generate ML-KEM-768 keypair     │                │     │
+   │ ├─ Generate X25519 keypair         │                │     │
+   │ ├─ Send public keys ──────────────────────────────────> │
+   │ │                                  │ ← Receive keys │     │
+   │ │                                  │ ├─ Generate keys    │
+   │ │                                  │ ├─ Compute secret   │
+   │ │                    Receive secret < ────────────────  │
+   │ └─ Compute same secret             │                │     │
+   │    (Both have same 256-bit key!)   │                │     │
+   └──────────────────────────────────────────────────────────┘
+
+2. MESSAGE ENCRYPTION
+   ┌──────────────────────────────────────────────────────────┐
+   │ Alice                                                     │
+   │ ├─ Message: "Hello Bob"                                 │
+   │ ├─ Encrypt with AES-256-GCM + Shared Key               │
+   │ │  Result: Ciphertext + 16-byte Auth Tag               │
+   │ ├─ Sign with ML-DSA-65 Private Key                     │
+   │ │  Result: Unforgeable Quantum Signature               │
+   │ └─ Send: [Ciphertext, Tag, Signature]                  │
+   └──────────────────────────────────────────────────────────┘
+
+3. MESSAGE VERIFICATION & DECRYPTION
+   ┌──────────────────────────────────────────────────────────┐
+   │ Bob                                                       │
+   │ ├─ Receive: [Ciphertext, Tag, Signature]               │
+   │ ├─ Verify ML-DSA-65 Signature with Alice's Public Key  │
+   │ │  ✅ Confirmed: It's really from Alice!               │
+   │ ├─ Verify AES-256-GCM Auth Tag                         │
+   │ │  ✅ Confirmed: No tampering detected!                │
+   │ ├─ Decrypt with Shared Secret Key                      │
+   │ │  Result: "Hello Bob"                                 │
+   │ └─ Message authenticated & decrypted successfully      │
+   └──────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Configuration
+
+Edit `app/config.py` to customize:
+
+```python
+# Security Settings
+SECRET_KEY = os.urandom(32)          # Session encryption key
+MAX_MESSAGE_SIZE = 1024 * 1024       # 1MB message limit
+SESSION_TIMEOUT = 3600               # 1 hour session timeout
+
+# Cryptography
+PQC_ALGORITHM = 'ML-KEM-768'         # Key exchange algorithm
+SIGNATURE_ALGORITHM = 'ML-DSA-65'    # Signature algorithm
+ENCRYPTION_ALGORITHM = 'AES-256-GCM' # Symmetric encryption
+
+# Database
+SQLALCHEMY_DATABASE_URI = 'sqlite:///secure_comm.db'
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+# Flask Settings
+DEBUG = False                         # Disable in production
+TESTING = False
+MAX_CONTENT_LENGTH = 50 * 1024 * 1024 # 50MB file upload limit
+```
+
+---
+
+## Troubleshooting
+
+### Issue: "liboqs not found"
+```bash
+# Solution: Reinstall dependencies
+pip install --upgrade --force-reinstall requirements.txt
+```
+
+### Issue: Port 5000 already in use
+```bash
+# Solution: Use different port
+python run.py --port 5001
+```
+
+### Issue: Database locked
+```bash
+# Solution: Remove old database
+del instance\secure_comm.db
+# Restart application
+python run.py
+```
+
+### Issue: SSL/Certificate errors
+```bash
+# Enable development mode (local testing only)
+export FLASK_ENV=development
+python run.py
+```
+
+---
+
+## Contributing
+
+We welcome contributions! Please:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/YourFeature`)
+3. Commit changes (`git commit -m 'Add YourFeature'`)
+4. Push to branch (`git push origin feature/YourFeature`)
+5. Open a Pull Request
+
+---
+
+## Security Notice
+
+⚠️ **This is an educational/demonstration project.**
+
+For production use:
+- ✅ Enable HTTPS/TLS with valid certificates
+- ✅ Use a production WSGI server (Gunicorn, uWSGI)
+- ✅ Deploy behind a reverse proxy (Nginx, Apache)
+- ✅ Use a production database (PostgreSQL, MySQL)
+- ✅ Implement rate limiting and DDoS protection
+- ✅ Regular security audits and penetration testing
+- ✅ Keep dependencies updated regularly
+
+---
+
+## References & Standards
+
+- **NIST Post-Quantum Cryptography:**
+  - FIPS 203: Module-Lattice-Based Key-Encapsulation Mechanism
+  - FIPS 204: Module-Lattice-Based Digital Signature Standard
+  - FIPS 205: Stateless Hash-Based Digital Signature Standard
+
+- **Open Quantum Safe Project:**
+  - https://openquantumsafe.org/
+  - liboqs: Reference implementation of PQC algorithms
+
+- **Key Standards:**
+  - RFC 5869: HKDF (HMAC-based Extract-and-Expand Key Derivation)
+  - NIST SP 800-38D: GCTR Mode
+  - FIPS 197: AES Specification
+
+---
+
+## License
+
+This project is licensed under the **MIT License** - see the LICENSE.txt file for details.
 
 ---
 
 <div align="center">
-  <b>Built for Next-Generation Cybersecurity & Quantum-Resistant Defense.</b>
-</div>#   y o g a y s h h h  
- #   q u a n t  
- #   q u a n t - f i n a l -  
- #   q u a n t - f i n a l -  
- 
+
+### Made with ❤️ for Quantum-Safe Communications
+
+**Last Updated:** September 2, 2026  
+**Version:** 1.0.0  
+**Status:** Production-Ready Demo
+
+[⬆ Back to Top](#-pqc-secure-communication---post-quantum-cryptography-platform)
+
+</div>
